@@ -471,6 +471,7 @@ class FastMCP:
                         name=arg.name,
                         description=arg.description,
                         required=arg.required,
+                        type=arg.type  # add to get type on client
                     )
                     for arg in (prompt.arguments or [])
                 ],

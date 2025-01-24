@@ -1,4 +1,5 @@
 from datetime import timedelta
+from typing import Any
 
 from anyio.streams.memory import MemoryObjectReceiveStream, MemoryObjectSendStream
 from pydantic import AnyUrl
@@ -182,7 +183,7 @@ class ClientSession(
         )
 
     async def get_prompt(
-        self, name: str, arguments: dict[str, str] | None = None
+        self, name: str, arguments: dict[str, Any] | None = None
     ) -> types.GetPromptResult:
         """Send a prompts/get request."""
         return await self.send_request(

@@ -207,7 +207,7 @@ class Server:
     def get_prompt(self):
         def decorator(
             func: Callable[
-                [str, dict[str, str] | None], Awaitable[types.GetPromptResult]
+                [str, dict[str, Any] | None], Awaitable[types.GetPromptResult]
             ],
         ):
             logger.debug("Registering handler for GetPromptRequest")

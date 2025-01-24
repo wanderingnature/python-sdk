@@ -72,7 +72,7 @@ def main(port: int, transport: str) -> int:
 
     @app.get_prompt()
     async def get_prompt(
-        name: str, arguments: dict[str, str] | None = None
+        name: str, arguments: dict[str, Any] | None = None
     ) -> types.GetPromptResult:
         if name != "simple":
             raise ValueError(f"Unknown prompt: {name}")

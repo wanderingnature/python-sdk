@@ -364,7 +364,7 @@ async def handle_list_prompts() -> list[types.Prompt]:
 @server.get_prompt()
 async def handle_get_prompt(
     name: str,
-    arguments: dict[str, str] | None
+    arguments: dict[str, Any] | None
 ) -> types.GetPromptResult:
     if name != "example-prompt":
         raise ValueError(f"Unknown prompt: {name}")

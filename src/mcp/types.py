@@ -534,6 +534,8 @@ class PromptArgument(BaseModel):
     """A human-readable description of the argument."""
     required: bool | None = None
     """Whether this argument must be provided."""
+    type: str | None = None
+    """Type of the argument."""
     model_config = ConfigDict(extra="allow")
 
 
@@ -560,7 +562,7 @@ class GetPromptRequestParams(RequestParams):
 
     name: str
     """The name of the prompt or prompt template."""
-    arguments: dict[str, str] | None = None
+    arguments: dict[str, Any] | None = None
     """Arguments to use for templating the prompt."""
     model_config = ConfigDict(extra="allow")
 

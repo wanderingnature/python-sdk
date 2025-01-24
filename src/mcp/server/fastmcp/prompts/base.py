@@ -61,6 +61,9 @@ class PromptArgument(BaseModel):
     required: bool = Field(
         default=False, description="Whether the argument is required"
     )
+    type: str | None = Field(
+        default=None, description="Type of the argument"
+    )
 
 
 class Prompt(BaseModel):
@@ -108,6 +111,7 @@ class Prompt(BaseModel):
                         name=param_name,
                         description=param.get("description"),
                         required=required,
+                        type=param.get("type")  # hotfix
                     )
                 )
 
